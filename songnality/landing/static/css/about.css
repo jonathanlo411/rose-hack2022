@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
+  background-image: url("https://animalcrossingworld.com/wp-content/uploads/2020/02/Switch_ACNH_0220-Direct_RSRemodel_SCRN_01.jpg");
   background-size: 100%;
   font-family: 'Rosario';
 }
@@ -55,4 +55,38 @@ h1 a:visited {
 
 .nav-links a:hover {
   background-color: #111;
+}
+
+.about_border {
+  width: 500px;
+  height: 340px;
+  padding: 10px;
+  border: 15px solid rgb(190, 232, 128);
+  background: beige;
+  margin-left: 470px;
+  margin-top: 200px;
+}
+
+.about_title {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: rgb(233, 102, 32);
+  border-bottom: 2px dashed rgb(168, 203, 115);
+  letter-spacing: 1.5px;
+}
+
+.about_text {
+  text-align: left;
+  padding: 40px;
+  color: rgb(150, 115, 115);
+  letter-spacing: 1.5px;
+}
+
+.about_closing {
+  margin-left: 209px;
+  margin-right: 25px;
+  margin-top: 5px;
+  color: rgb(233, 102, 32);
+  letter-spacing: 1.5px;
 }

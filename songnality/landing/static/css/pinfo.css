@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
+  background-image: url("https://i.pinimg.com/originals/a7/0c/b0/a70cb09e3252076838754f35329cd0f4.png");
   background-size: 100%;
   font-family: 'Rosario';
 }
@@ -55,4 +55,243 @@ h1 a:visited {
 
 .nav-links a:hover {
   background-color: #111;
+}
+
+.title {
+  margin-top: 10vh;
+  color:beige;
+  
+}
+
+.b1 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 100px;
+  margin-top: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/thumb/d/da/Marshal_NH.png/501px-Marshal_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 100px;
+}
+
+.t1 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s1 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b2 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 100px;
+  margin-top: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/thumb/2/25/Marina_NH.png/347px-Marina_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 75px;
+}
+
+.t2 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s2 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b3 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 100px;
+  margin-top: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/thumb/e/ea/Bob_NH.png/285px-Bob_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 63px;
+}
+
+.t3 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s3 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b4 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 100px;
+  margin-top: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/thumb/0/0e/Apollo_NH_Transparent.png/460px-Apollo_NH_Transparent.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 60px;
+  background-repeat: no-repeat;
+  background-size: 80px;
+}
+
+.t4 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s4 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b5 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 700px;
+  margin-top: -920px;
+  
+
+  background-image: url(https://dodo.ac/np/images/d/d4/Judy_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 70px;
+}
+
+.t5 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s5 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b6 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 700px;
+  margin-top: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/1/1b/Audie_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 70px;
+}
+
+.t6 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s6 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b7 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 700px;
+  margin-top: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/thumb/3/3e/Cherry_NH.png/360px-Cherry_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 75px;
+}
+
+.t7 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s7 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.b8 {
+  border-radius: 25px;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid rgb(225, 165, 175);
+  background: beige;
+  margin-left: 700px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+
+  background-image: url(https://dodo.ac/np/images/7/75/Dom_NH.png);
+  background-position: bottom left;
+  background-position-x: 30px;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  background-size: 100px;
+}
+
+.t8 {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.s8 {
+  margin-left: 150px;
+  margin-top: 10px;
 }
