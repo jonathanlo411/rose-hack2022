@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Rosario:400&subset=latin,latin-ext);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,19 +7,24 @@
 body {
   background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
   background-size: 100%;
+  font-family: 'Rosario';
+}
+
+/* Navbar */
+.nav-bar {
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
 
 h1 {
   color: white;
-  margin-left: 20px; /*TODO: fix this */
+  margin-left: 10%;
+  margin-top: 2%;
 }
 
 .nav-title {
   margin-right: auto;
-}
-
-.nav-links {
-  /* TODO: Center Vertically */
 }
 
 .nav-bar {
@@ -40,4 +46,72 @@ li a {
 
 li a:hover {
   background-color: #111;
+}
+
+/* Main text */
+.main {
+    text-align: center;
+}
+
+.main #welcome {
+    width: 40%;
+    margin: 10vh auto 0;
+    font-size: 12vh;
+    font-weight: bold;
+}
+
+.main #subwelcome {
+    margin-top: 10vh;
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+.main button {
+    border-style: none;
+    outline: 0;
+    background-color: #6196AD;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0.75% 4%;
+    text-align: center;
+    transition: 0.25s;
+    border-radius: 25px;
+    margin-top: 10vh;
+}
+
+.main button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.main .sponser {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    bottom: 0vh;
+}
+
+.main .sponser #message {
+    font-size: 20px;
+    margin: 0;
+}
+
+.main #spotify {
+    width: 100px;
+    height: 50px;
+    margin: 0;
+    display: inline-block;
+}
+
+.main #spotify img {
+    width: 100%;
+    height: auto;
+}
+
+.main #spotify:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
