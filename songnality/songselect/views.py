@@ -21,15 +21,6 @@ def authorize_user(client_id, client_secret, redirect_uri):
     return spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri,scope=scope))
 
 
-script_dir = os.path.dirname(os.path.realpath(__file__))
-config_file = open(os.path.join(script_dir, 'config.json'))
-config = json.load(config_file)
-config_file.close()
-
-# Intializing variables
-ID = config['ID']
-SECRET = config['SECRET']
-SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
 
 # Print out list of song objects with name, artist, and picture
 def get_top_tracks(SP):
@@ -125,16 +116,28 @@ def songselect(request):
     ID = config['ID']
     SECRET = config['SECRET']
     SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
+    s = query_playlists(SP)
     
     # Initial Page Load
     context = {
         "sform": SearchForm,
-        "sp": SP
+        "s": s
     }
     return render(request, 'songselect/songselect.html', context)
 
 @csrf_exempt
 def searchsong(request):
+    
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    config_file = open(os.path.join(script_dir, 'config.json'))
+    config = json.load(config_file)
+    config_file.close()
+
+    # Intializing variables
+    ID = config['ID']
+    SECRET = config['SECRET']
+    SP = authorize_user(ID, SECRET, 'https://www.google.com/')
+
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":
         form = SearchForm(request.POST)
