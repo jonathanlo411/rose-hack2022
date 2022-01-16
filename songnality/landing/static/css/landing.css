@@ -5,7 +5,8 @@
 }
 
 body {
-  background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
+  /* background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png"); */
+  background-color: #E5FFB3;
   background-size: 100%;
   font-family: 'Rosario';
 }
@@ -29,11 +30,13 @@ h1 a {
 }
 
 h1 a:visited {
-    color: inherit;
+    color: #025600;
 }
 
+/* Songnality.. */
 .nav-title {
   margin-right: auto;
+  
 }
 
 .nav-bar {
@@ -41,20 +44,20 @@ h1 a:visited {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #92DE34;
   display: flex;
 }
 
 .nav-links a {
   display: block;
-  color: white;
+  color: #025600;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .nav-links a:hover {
-  background-color: #111;
+  background-color: #69BC22;
 }
 
 /* Main text */
@@ -64,15 +67,34 @@ h1 a:visited {
 
 .main #welcome {
     width: 40%;
-    margin: 10vh auto 0;
-    font-size: 12vh;
+    margin: 15vh auto 0;
+    font-size: 10vh;
     font-weight: bold;
+    color: #c48d3f;
+    font-family: "Georigia";
+    /* text-shadow: -8px 0px 0 #714f1f; */
 }
 
 .main #subwelcome {
-    margin-top: 10vh;
-    font-size: 5vh;
+    margin-top: 5vh;
+    /* font-size: 5vh;
+    font-weight: bold; */
+    color: #c48d3f;
+    font-size: 30px;
     font-weight: bold;
+    font-family: "Georigia";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-accent: #DBF8A3;
+  --background-accent-2: #BDE66E;
+  --light: #92DE34;
+  --dark: #69BC22;
+  --text: #025600;
 }
 
 .main button {
@@ -86,12 +108,49 @@ h1 a:visited {
     text-align: center;
     transition: 0.25s;
     border-radius: 25px;
-    margin-top: 10vh;
+    margin-top: 15vh;
+    margin-left: 500px;
+
+    display: block;
+    outline: none;
+    border: none;
+    background-color: var(--light);
+    width: 400px;
+    height: 70px;
+    border-radius: 30px;
+    color: var(--text);
+    background-size: 100% 100%;
+    box-shadow: 0 0 0 7px var(--light) inset;
 }
+
 
 .main button:hover {
     opacity: 0.8;
     cursor: pointer;
+
+    background-image: linear-gradient(
+    145deg,
+    transparent 10%,
+    var(--dark) 10% 20%,
+    transparent 20% 30%,
+    var(--dark) 30% 40%,
+    transparent 40% 50%,
+    var(--dark) 50% 60%,
+    transparent 60% 70%,
+    var(--dark) 70% 80%,
+    transparent 80% 90%,
+    var(--dark) 90% 100%
+  );
+  animation: background 3s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
 }
 
 .main .sponser {
@@ -106,6 +165,7 @@ h1 a:visited {
 .main .sponser #message {
     font-size: 20px;
     margin: 0;
+    color: #c48d3f;
 }
 
 .main #spotify {
