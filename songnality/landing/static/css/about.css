@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Rosario:400&subset=latin,latin-ext);
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
+  background-size: 100%;
+  font-family: 'Rosario';
+}
+
+/* Navbar */
+.nav-bar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+h1 {
+  color: white;
+  margin-left: 10%;
+  margin-top: 2%;
+  padding: 0;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+h1 a:visited {
+    color: inherit;
+}
+
+.nav-title {
+  margin-right: auto;
+}
+
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+}
+
+.nav-links a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background-color: #111;
+}
