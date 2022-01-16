@@ -11,7 +11,8 @@ $( document ).ready(function() {
                 },
                 success: function (response) {
                     // get data from search and display
-                    alert(response)
+                    $('.search-results').css("display", "inline")
+                    $('#spotify').css("margin-top", "3vh")
                     console.log(response)
                 },
                 error: function (response) {

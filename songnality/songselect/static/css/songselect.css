@@ -8,4 +8,74 @@ body {
   background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
   background-size: 100%;
   font-family: 'Rosario';
+  width: 100%
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+/* Left side */
+.left {
+  left: 0;
+  flex: 6;
+}
+
+.left #search {
+  width: 100%;
+  text-align: center;
+}
+
+#search #search-bar {
+  padding: 2%;
+  background-color: white;
+  border-radius: 50px;
+  border: 1px solid black;
+  width: 90%;
+  margin: 2vh auto 0;
+}
+
+#search .search-results {
+  background-color: white;
+  border: 1px solid black;
+  padding: 2%;
+  border-radius: 25px;
+  width: 90%;
+  margin: 0 auto;
+  height: 45vh;
+  display: none;
+}
+
+.left #spotify {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 2%;
+  height: 40vh;
+  width: 90%;
+  margin: 48vh auto 0;
+}
+
+
+/* Right side */
+.right {
+  flex: 4;
+  display: inline;
+}
+
+.right #selected {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 90%;
+  margin: 2vh auto 0;
+  height: 50vh;
+}
+
+#selected .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 2% auto 0;
+  text-align: center;
 }

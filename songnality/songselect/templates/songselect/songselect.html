@@ -5,21 +5,34 @@
     <title>Welcome to Songnality!</title>
 </head>
 <body>
-    <section id="search">
-        <form>
-            <input id="search-bar" type="text">
-        </form>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="./../../static/js/search.js"></script>
-    
-    <section id="selected">
+    <div class="wrapper">
 
-    </section>
+    <div class="left">
+        <section id="search">
+            <form>
+                <input placeholder="Search for songs..." id="search-bar" type="text">
+            </form>
+            <div class="search-results">
+                
+            </div>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="./../../static/js/search.js"></script>
+        
 
-    <section id="spotify">
+        <section id="spotify">
 
-    </section>
+        </section>
+    </div>
 
-    
+    <div class="right">
+        <section id="selected">
+            <h3 class="title">Selected Songs</h3>
+            <div>
+
+            </div>
+        </section>
+    </div>
+
+    </div>
 </body>
