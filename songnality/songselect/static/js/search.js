@@ -11,8 +11,8 @@ $( document ).ready(function() {
                 },
                 success: function (response) {
                     // get data from search and display
-
-                    alert("success!")
+                    alert(response)
+                    console.log(response)
                 },
                 error: function (response) {
                     // alert the error if any error occured

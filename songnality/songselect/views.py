@@ -24,7 +24,8 @@ def songselect(request):
     # Intializing variables
     ID = config['ID']
     SECRET = config['SECRET']
-    
+    SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
+
     # Initial Page Load
     context = {
         "sform": SearchForm
@@ -33,18 +34,27 @@ def songselect(request):
 
 @csrf_exempt
 def searchsong(request):
+    # Obtaining info
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    config_file = open(os.path.join(script_dir, 'config.json'))
+    config = json.load(config_file)
+    config_file.close()
+
+    # Intializing variables
+    ID = config['ID']
+    SECRET = config['SECRET']
+    SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
+
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":
         form = SearchForm(request.POST)
-        print(form)
         if form.is_valid():
             search = form['search']
-            # serialize in new friend object in json
-            # send to client side.
-            return JsonResponse({"instance": search}, status=200)
+            results = search_tracks(search, SP)
+            jsonResults = json.dumps(results)
+            return JsonResponse(jsonResults, status=200)
         else:
             # some form errors occured.
-            print("ahh")
             return JsonResponse({"error": form.errors}, status=400)
     # some error occured
     print('here')
@@ -59,10 +69,8 @@ def authorize_user(client_id, client_secret, redirect_uri):
     scope = 'user-library-read playlist-read-private user-top-read'
     return spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri,scope=scope))
 
-SP = authorize_user() # Is there a way to turn this into a global variable?
-
 # Print out list of song objects with name, artist, and picture
-def get_top_tracks():
+def get_top_tracks(SP):
     top_tracks = []
 
     top_query = SP.current_user_top_tracks(limit=20, offset=0, time_range='medium_term')['items']
@@ -81,7 +89,7 @@ def get_top_tracks():
     return top_tracks
 
 # Create function to return list of search results based on search query
-def search_tracks(query):
+def search_tracks(query, SP):
     search_results = SP.search(q=query, type='track,artist')
     search_tracks = []
 
@@ -100,7 +108,7 @@ def search_tracks(query):
     return search_tracks
 
 # Create list of current user's playlists
-def query_playlists():
+def query_playlists(SP):
     playlists_list = []
     playlists = SP.current_user_playlists(limit=50, offset=0)['items']
     for playlist in playlists:
@@ -112,7 +120,7 @@ def query_playlist_id(playlist_name, playlist_list):
     return next(item for item in playlist_list if item["name"] == playlist_name)['playlist_id']
 
 # Create function that returns list of tracks in specified playlist
-def tracks_in_playlist(username, playlist_id):
+def tracks_in_playlist(username, playlist_id, SP):
     playlist_tracks = []
 
     playlist_query = SP.user_playlist_tracks(username, playlist_id)['items']
@@ -124,7 +132,7 @@ def tracks_in_playlist(username, playlist_id):
         playlist_tracks.append({'artists': artists, 'track_id': entry['track']['id'], 'name': entry['track']['name'], 'preview_url': entry['track']['preview_url'], 'image': entry['track']['album']['images'][-1]['url']})
     return playlist_tracks
 
-def get_track_features(track_ids):
+def get_track_features(track_ids, SP):
     audio_features = SP.audio_features(track_ids)
     return audio_features
 
