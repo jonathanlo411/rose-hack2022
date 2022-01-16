@@ -12,55 +12,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import collections
 
-@csrf_exempt
-# Create your views here.
-def songselect(request):
-    # Obtaining info
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    config_file = open(os.path.join(script_dir, 'config.json'))
-    config = json.load(config_file)
-    config_file.close()
-
-    # Intializing variables
-    ID = config['ID']
-    SECRET = config['SECRET']
-    SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
-
-    # Initial Page Load
-    context = {
-        "sform": SearchForm
-    }
-    return render(request, 'songselect/songselect.html', context)
-
-@csrf_exempt
-def searchsong(request):
-    # Obtaining info
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    config_file = open(os.path.join(script_dir, 'config.json'))
-    config = json.load(config_file)
-    config_file.close()
-
-    # Intializing variables
-    ID = config['ID']
-    SECRET = config['SECRET']
-    SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
-
-    # request should be ajax and method should be POST.
-    if request.is_ajax and request.method == "POST":
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            search = form['search']
-            results = search_tracks(search, SP)
-            jsonResults = json.dumps(results)
-            return JsonResponse(jsonResults, status=200)
-        else:
-            # some form errors occured.
-            return JsonResponse({"error": form.errors}, status=400)
-    # some error occured
-    print('here')
-    return JsonResponse({"error": ""}, status=400)
-
-
 
 # API Helper Functions
 
@@ -68,6 +19,17 @@ def searchsong(request):
 def authorize_user(client_id, client_secret, redirect_uri):
     scope = 'user-library-read playlist-read-private user-top-read'
     return spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri,scope=scope))
+
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+config_file = open(os.path.join(script_dir, 'config.json'))
+config = json.load(config_file)
+config_file.close()
+
+# Intializing variables
+ID = config['ID']
+SECRET = config['SECRET']
+SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
 
 # Print out list of song objects with name, artist, and picture
 def get_top_tracks(SP):
@@ -145,4 +107,46 @@ def average_features(list_of_features):
         counter.update(d)
         
     return {k: v / len(list_of_features) for k, v in dict(counter).items()}
+
+
+
+# Render
+
+@csrf_exempt
+# Create your views here.
+def songselect(request):
+    # Obtaining info
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    config_file = open(os.path.join(script_dir, 'config.json'))
+    config = json.load(config_file)
+    config_file.close()
+
+    # Intializing variables
+    ID = config['ID']
+    SECRET = config['SECRET']
+    SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
+    
+    # Initial Page Load
+    context = {
+        "sform": SearchForm,
+        "sp": SP
+    }
+    return render(request, 'songselect/songselect.html', context)
+
+@csrf_exempt
+def searchsong(request):
+    # request should be ajax and method should be POST.
+    if request.is_ajax and request.method == "POST":
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            search = form['search']
+            results = search_tracks(search, SP)
+            jsonResults = json.dumps(results)
+            return JsonResponse(jsonResults, status=200)
+        else:
+            # some form errors occured.
+            return JsonResponse({"error": form.errors}, status=400)
+    # some error occured
+    print('here')
+    return JsonResponse({"error": ""}, status=400)
 
