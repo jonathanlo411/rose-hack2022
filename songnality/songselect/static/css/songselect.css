@@ -1,0 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Rosario:400&subset=latin,latin-ext);
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-image: url("https://cdn.discordapp.com/attachments/931976776744329216/932122973907849236/bxGO6jd.png");
+  background-size: 100%;
+  font-family: 'Rosario';
+}

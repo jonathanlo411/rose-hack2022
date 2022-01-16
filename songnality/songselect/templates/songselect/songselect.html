@@ -5,5 +5,22 @@
     <title>Welcome to Songnality!</title>
 </head>
 <body>
-    <h1> This is song select :)</h1>
+    <section id="search">
+        <form method="post">
+            {% csrf_token %}
+            {{ sform.search }}
+        </form>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="./../../static/js/search.js"></script>
+    
+    <section id="selected">
+
+    </section>
+
+    <section id="spotify">
+
+    </section>
+
+    
 </body>
