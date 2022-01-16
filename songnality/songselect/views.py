@@ -18,7 +18,8 @@ import collections
 # Authorization function
 def authorize_user(client_id, client_secret, redirect_uri):
     scope = 'user-library-read playlist-read-private user-top-read'
-    return spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri,scope=scope))
+    auth_link=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri,scope=scope).get_authorize_url()
+    return spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri"""maybe put auth url here?""",scope=scope))
 
 
 
