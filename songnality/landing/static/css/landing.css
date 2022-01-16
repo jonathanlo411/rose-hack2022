@@ -36,7 +36,9 @@ h1 a:visited {
 /* Songnality.. */
 .nav-title {
   margin-right: auto;
-  
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 .nav-bar {
@@ -48,12 +50,14 @@ h1 a:visited {
   display: flex;
 }
 
+/* About, Personal In */
 .nav-links a {
   display: block;
   color: #025600;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .nav-links a:hover {
