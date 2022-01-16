@@ -79,3 +79,60 @@ body {
   margin: 2% auto 0;
   text-align: center;
 }
+
+#spotify {
+  overflow-x: scroll;
+}
+
+#spotify div {
+  margin-top: 1vh;
+  margin-left: 3vw;
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  display: inline-block;
+}
+
+#spotify div img {
+  width: 100%;
+  height: auto;
+}
+
+#dasv:hover {
+  cursor: pointer;
+}
+
+#asd {
+  margin-top: 1vh;
+  margin-left: 3vw;
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  display: inline-block;
+}
+
+#asd #bas {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#sdjsdf {
+  
+  border-style: none;
+  outline: 0;
+  background-color: #6196AD;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5% 10%;
+  text-align: center;
+  transition: 0.25s;
+  border-radius: 25px;
+  margin-top: 15vh;
+  margin-left: 10vh;
+}
+
+#sdjsdf:hover {
+  cursor: pointer;
+}

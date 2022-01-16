@@ -16,18 +16,21 @@ import collections
 # API Helper Functions
 
 # Authorization function
-def authorize_user(client_id, client_secret, redirect_uri):
+def authorize_user1(client_id, client_secret, redirect_uri):
     scope = 'user-library-read playlist-read-private user-top-read'
     auth_link=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri,scope=scope).get_authorize_url()
-    return spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret, redirect_uri=redirect_uri"""maybe put auth url here?""",scope=scope))
+    return auth_link
+
+def authorize_user2(auth_link):
+    return spotipy.Spotify(auth_manager=auth_link)
 
 
 
 # Print out list of song objects with name, artist, and picture
-def get_top_tracks(SP):
+def get_top_tracks(client):
     top_tracks = []
 
-    top_query = SP.current_user_top_tracks(limit=20, offset=0, time_range='medium_term')['items']
+    top_query = client.current_user_top_tracks(limit=20, offset=0, time_range='medium_term')['items']
     for entry in top_query:
         artists = []
         for artist in entry['artists']:
@@ -107,37 +110,21 @@ def average_features(list_of_features):
 @csrf_exempt
 # Create your views here.
 def songselect(request):
-    # Obtaining info
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    config_file = open(os.path.join(script_dir, 'config.json'))
-    config = json.load(config_file)
-    config_file.close()
-
-    # Intializing variables
-    ID = config['ID']
-    SECRET = config['SECRET']
-    SP = authorize_user(ID, SECRET, 'http://127.0.0.1:8000/songselect')
-    s = query_playlists(SP)
-    
-    # Initial Page Load
-    context = {
-        "sform": SearchForm,
-        "s": s
-    }
-    return render(request, 'songselect/songselect.html', context)
+    if request.method == "GET":
+        auth_code = request.GET['code']
+        #client = authorize_user2(auth_code)
+        #results = get_top_tracks(client)
+        #results = query_playlists(client)
+        # Initial Page Load
+        #context = {
+        #    "sform": SearchForm,
+        #    "results": results
+        #}
+        #return render(request, 'songselect/songselect.html', context)
+    return render(request, 'songselect/songselect.html')
 
 @csrf_exempt
 def searchsong(request):
-    
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    config_file = open(os.path.join(script_dir, 'config.json'))
-    config = json.load(config_file)
-    config_file.close()
-
-    # Intializing variables
-    ID = config['ID']
-    SECRET = config['SECRET']
-    SP = authorize_user(ID, SECRET, 'https://www.google.com/')
 
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":

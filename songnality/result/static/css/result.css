@@ -1,0 +1,54 @@
+
+.left {
+    width: 35%;
+    background-color: rgb(180, 250, 255);
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 7vh 0 0 7vh;
+    padding: 2.5%;
+}
+
+.left h1 {
+    font-size: 40px;
+}
+
+.wrap {
+    right: 10vw;
+    top: 10vh;
+    position: absolute;
+}
+
+.topsongs {
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0%;
+    width: 50%;
+    margin-left: 5vh auto;
+    height: 40vh;
+    overflow-x: scroll;
+}
+
+.topsongs h2 {
+    top: 0;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+
+}
+
+.topsongs div {
+    
+  margin-top: 1vh;
+  margin-left: 3vw;
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  display: inline-block;
+}
+
+.topsongs img {
+    width: 100%;
+    height: auto;
+
+}
