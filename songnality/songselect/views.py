@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Other Imports
 import os, json
 
+@csrf_exempt
 # Create your views here.
 def songselect(request):
     # Obtaining info
@@ -31,15 +32,15 @@ def searchsong(request):
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":
         form = SearchForm(request.POST)
+        print(form)
         if form.is_valid():
-            instance = form.save()
             search = form['search']
             # serialize in new friend object in json
-            ser_instance = serializers.serialize('json', [ instance, ])
             # send to client side.
-            return JsonResponse({"instance": ser_instance}, status=200)
+            return JsonResponse({"instance": search}, status=200)
         else:
             # some form errors occured.
+            print("ahh")
             return JsonResponse({"error": form.errors}, status=400)
     # some error occured
     print('here')
