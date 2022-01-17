@@ -1,5 +1,5 @@
 # Rose Hacks 2022 Submission
-This project was created as a submission to [Rose Hacks 2022](https://rosehack.com/index.html).
+This project was created as a submission to [Rose Hacks 2022](https://rosehack.com/index.html) and won 2nd place overall.
 **Team Members**:  *Jonathan Lo, Eric Wang, and Yenna Chang*
 
 ## Songnality
